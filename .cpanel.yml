@@ -1,0 +1,6 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/alpacaqr/public_html/pad/
+    - /bin/mkdir -p $DEPLOYPATH
+    - /bin/cp -Rf app/. $DEPLOYPATH
