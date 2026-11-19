@@ -158,7 +158,7 @@
   const NOTE_NAMES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
   const SCALES = { minor: [0,2,3,5,7,8,10], major: [0,2,4,5,7,9,11], chromatic: [0,1,2,3,4,5,6,7,8,9,10,11] };
   const DEFAULTS = { root: 9, mode: 'minor', oct: 2, snap: 100, glide: 35, q: 8, rel: 150, readout: 1, solo: 0, shift: 0, inst: 'lead', relBy: { lead: 150, pad: 1100, pluck: 260 } };
-  const APP_VERSION = 'v1';   // bump on every release (and VERSION in sw.js)
+  const APP_VERSION = 'v2';   // bump on every release (and VERSION in sw.js)
   const KEY = 'lumapad.v2';
   let S = Object.assign({}, DEFAULTS); S.relBy = Object.assign({}, DEFAULTS.relBy);
   try { const raw = localStorage.getItem(KEY); if (raw) Object.assign(S, JSON.parse(raw)); } catch (_) {}
