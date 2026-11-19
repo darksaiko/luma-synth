@@ -226,8 +226,16 @@
       master.connect(conv); dlyOut.connect(conv); conv.connect(revOut); revOut.connect(comp);
       applySolo(true);
     }
-    if (ctx.state !== 'running') ctx.resume().catch(() => {});
+    unlockAudio();
   }
+  // iOS only starts audio from touchend/click (not pointerdown) and mutes it with the silent switch unless session is "playback"
+  function unlockAudio() {
+    if (!ctx) return;
+    try { if (navigator.audioSession) navigator.audioSession.type = 'playback'; } catch (_) {}
+    if (ctx.state !== 'running') ctx.resume().catch(() => {});
+    try { const s = ctx.createBufferSource(); s.buffer = ctx.createBuffer(1, 1, 22050); s.connect(ctx.destination); s.start(0); } catch (_) {}
+  }
+  ['touchend', 'pointerup', 'click'].forEach(ev => document.addEventListener(ev, () => { if (typeof ctx !== 'undefined' && ctx) unlockAudio(); }, { passive: true }));
   const glideTC = () => Math.max(0.004, S.glide / 1000 / 3);
 
   // instruments: oscillator layers (type, detune in cents, level), amp attack, voice level, pluck shape
