@@ -1,6 +1,6 @@
 {
-  "name": "Luma Pad",
-  "short_name": "Luma Pad",
+  "name": "Luma Synth",
+  "short_name": "Synth",
   "description": "XY synth pad: Lead, Pad and Pluck",
   "id": "./",
   "start_url": "./",

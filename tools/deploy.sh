@@ -1,14 +1,14 @@
 #!/bin/bash
-# Auto-deploy for Luma Pad.
+# Auto-deploy for Luma Synth.
 # Run by a cPanel cron job every few minutes: checks GitHub for a new version and,
 # when there is one, copies everything in the repo's app/ folder into the live folder.
 # Paths can be overridden with environment variables (used for testing).
 
-REPO="${REPO:-/home/alpacaqr/repositories/pad}"
-LIVE="${LIVE:-/home/alpacaqr/public_html/pad}"
-LOG="${LOG:-/home/alpacaqr/deploy-pad.log}"
-LOCK="${LOCK:-/home/alpacaqr/.deploy-pad.lock}"
-STATE="${STATE:-/home/alpacaqr/.deploy-pad.last}"
+REPO="${REPO:-/home/alpacaqr/repositories/luma-synth}"
+LIVE="${LIVE:-/home/alpacaqr/public_html/synth}"
+LOG="${LOG:-/home/alpacaqr/deploy-synth.log}"
+LOCK="${LOCK:-/home/alpacaqr/.deploy-synth.lock}"
+STATE="${STATE:-/home/alpacaqr/.deploy-synth.last}"
 
 main() {
   cd "$REPO" || exit 1

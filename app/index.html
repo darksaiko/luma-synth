@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="theme-color" content="#04040c">
-<title>Luma Pad — XY Square Synth</title>
+<title>Luma Synth — XY Square Synth</title>
 <link rel="manifest" href="manifest.json">
 <link rel="icon" type="image/png" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/icon-192.png">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-title" content="Luma Pad">
+<meta name="apple-mobile-web-app-title" content="Synth">
 <style>
   @font-face{font-family:'Outfit';font-weight:200;font-style:normal;font-display:swap;src:url(fonts/outfit-200.woff2) format('woff2')}
   @font-face{font-family:'Outfit';font-weight:300;font-style:normal;font-display:swap;src:url(fonts/outfit-300.woff2) format('woff2')}
@@ -158,7 +158,7 @@
   const NOTE_NAMES = ['C','C#','D','D#','E','F','F#','G','G#','A','A#','B'];
   const SCALES = { minor: [0,2,3,5,7,8,10], major: [0,2,4,5,7,9,11], chromatic: [0,1,2,3,4,5,6,7,8,9,10,11] };
   const DEFAULTS = { root: 9, mode: 'minor', oct: 2, snap: 100, glide: 35, q: 8, rel: 150, readout: 1, solo: 0, shift: 0, inst: 'lead', relBy: { lead: 150, pad: 1100, pluck: 260 } };
-  const APP_VERSION = 'v3';   // bump on every release (and VERSION in sw.js)
+  const APP_VERSION = 'v4';   // bump on every release (and VERSION in sw.js)
   const KEY = 'lumapad.v2';
   let S = Object.assign({}, DEFAULTS); S.relBy = Object.assign({}, DEFAULTS.relBy);
   try { const raw = localStorage.getItem(KEY); if (raw) Object.assign(S, JSON.parse(raw)); } catch (_) {}
